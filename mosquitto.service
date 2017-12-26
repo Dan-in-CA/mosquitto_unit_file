@@ -1,5 +1,6 @@
 [Unit]
 Description=Mosquitto MQTT Broker daemon
+# Note: The following path may be different on your system.
 ConditionPathExists=/usr/local/etc/mosquitto/mosquitto.conf
 After=network.target
 Requires=network.target
@@ -9,6 +10,7 @@ Type=forking
 RemainAfterExit=no 
 StartLimitInterval=0 
 PIDFile=/var/run/mosquitto.pid 
+# Note: The following paths may be different on your system.
 ExecStart=/usr/local/sbin/mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf -d 
 ExecReload=/bin/kill -HUP $MAINPID 
 Restart=on-failure 
