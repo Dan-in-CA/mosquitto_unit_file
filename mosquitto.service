@@ -1,7 +1,5 @@
 [Unit]
 Description=Mosquitto MQTT Broker daemon
-# Note: The following path may be different on your system.
-ConditionPathExists=/usr/local/etc/mosquitto/mosquitto.conf
 After=network.target
 Requires=network.target
 
